@@ -1,0 +1,42 @@
+﻿<Window x:Class="DigitalWatchBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Digital Watch Bot"
+        Height="150"
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        Icon="Assets/smart_watch.ico">
+
+    <Grid Background="#CCFFFFFF">
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock x:Name="Hour"
+                       FontSize="72"
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="HourMinuteSeparator"
+                       FontSize="72"
+                       FontWeight="Bold">:</TextBlock>
+            <TextBlock x:Name="Minute"
+                       FontSize="72"
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="MinuteSecondSeparator"
+                       FontSize="72"
+                       FontWeight="Bold">:</TextBlock>
+            <TextBlock x:Name="Second"
+                       FontSize="72"
+                       FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- AM / PM -->
+        <TextBlock x:Name="Meridiem"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   Margin="10"/>
+    </Grid>
+</Window>
