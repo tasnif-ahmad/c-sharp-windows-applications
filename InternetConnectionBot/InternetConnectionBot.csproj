@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+     <ApplicationIcon>Assets\internet_link.ico</ApplicationIcon>
+  </PropertyGroup>
+  
+  <ItemGroup>
+        <Resource Include="Assets\internet_link.ico" />
+        <Resource Include="Assets\green-tick.png" />
+        <Resource Include="Assets\red-cross.png" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+﻿<Application x:Class="InternetConnectionBot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InternetConnectionBot"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <Style TargetType="Window">
+            <Setter Property="Icon"
+                    Value="Assets/internet_link.ico"/>
+        </Style>
+    </Application.Resources>
+</Application>
