@@ -1,0 +1,12 @@
+﻿<Application x:Class="CalculatorBot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CalculatorBot"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Window">
+            <Setter Property="Icon"
+                    Value="Assets/calculator_icon.ico"/>
+        </Style>
+    </Application.Resources>
+</Application>
