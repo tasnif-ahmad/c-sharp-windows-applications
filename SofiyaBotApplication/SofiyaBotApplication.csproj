@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+     <ApplicationIcon>Assets/bot_flag_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+      <Resource Include="Assets\bot_flag_icon.ico" />
+      <Resource Include="Assets\SarahBotEquilizer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Speech" Version="10.0.2" />
+  </ItemGroup>
+</Project>

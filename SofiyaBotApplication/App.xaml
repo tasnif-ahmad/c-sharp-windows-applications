@@ -1,0 +1,12 @@
+﻿<Application x:Class="SofiyaBotApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SofiyaBotApplication"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Window">
+            <Setter Property="Icon"
+                    Value="Assets/bot_flag_icon.ico"/>
+        </Style>
+    </Application.Resources>
+</Application>
