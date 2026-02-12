@@ -1,0 +1,125 @@
+﻿<Window x:Class="VoMediaPlayerBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Voice Media Player"
+        Width="900"
+        Height="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E"
+        Foreground="White">
+
+            <!-- Global Styles -->
+        <Window.Resources>
+              
+                         <!-- Global Button Style -->  
+                <Style TargetType="Button">
+                        <Setter Property="Background"
+                                Value="#E5E5E5"/>
+                        <Setter Property="Foreground"
+                                Value="#222222"/>
+                        <Setter Property="BorderBrush"
+                                Value="#C8C8C8"/>
+                        <Setter Property="BorderThickness"
+                                Value="2"/>
+                        <Setter Property="Padding"
+                                Value="10,5"/>
+                        <Setter Property="Margin"
+                                Value="6"/>
+                        <Setter Property="Cursor"
+                                Value="Hand"/>
+                        <Setter Property="FontSize"
+                                        Value="14"/>
+
+                        <Setter Property="FontWeight"
+                                Value="DemiBold"/>
+                        <Setter Property="Template">
+                                <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="1"
+                                                        CornerRadius="8">
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                        <!-- Hover -->
+                                                        <Trigger Property="IsMouseOver"
+                                                                 Value="True">
+                                                                <Setter Property="Background"
+                                                                        Value="#DADADA"/>
+                                                        </Trigger>
+
+                                                        <!-- Click -->
+                                                        <Trigger Property="IsPressed"
+                                                                 Value="True">
+                                                                <Setter Property="Background"
+                                                                        Value="#CFCFCF"/>
+                                                        </Trigger>
+                                                </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                </Setter.Value>
+                        </Setter>
+                </Style>
+
+        </Window.Resources>
+
+        <!-- ONLY ONE ROOT ELEMENT INSIDE WINDOW -->
+        <Grid Margin="10">
+                <!-- Define Rows for Media Display and Controls -->
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+               <!-- Media Player Display Area -->
+                <Border Grid.Row="0"
+                        Background="Black"
+                        CornerRadius="12"
+                        BorderBrush="#333"
+                        BorderThickness="2"
+                        Padding="5">
+
+                        <MediaElement x:Name="Player"
+                                      LoadedBehavior="Manual"
+                                      UnloadedBehavior="Stop"
+                                      Stretch="Uniform"/>
+                </Border>
+
+                        <!-- Control Panel -->
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,10,0,0">
+
+                        <Button Content="Open"
+                                Width="110"
+                                Margin="5"
+                                Click="Open_Click"/>
+
+                        <Button Content="Play"
+                                Width="110"
+                                Margin="5"
+                                Click="Play_Click"/>
+
+                        <Button Content="Pause"
+                                Width="110"
+                                Margin="5"
+                                Click="Pause_Click"/>
+
+                        <Button Content="Vol +"
+                                Width="60"
+                                Margin="5"
+                                Click="VolumeUp_Click"/>
+
+                        <Button Content="Vol -"
+                                Width="60"
+                                Margin="5"
+                                Click="VolumeDown_Click"/>
+
+                        <Button Content="Mute"
+                                Width="110"
+                                Margin="5"
+                                Click="Mute_Click"/>
+                </StackPanel>
+        </Grid>
+</Window>

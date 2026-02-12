@@ -1,0 +1,12 @@
+﻿<Application x:Class="VoMediaPlayerBot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VoMediaPlayerBot"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+    <Style TargetType="Window">
+        <Setter Property="Icon"
+                Value="Assets/Media_player.ico"/>
+    </Style>
+    </Application.Resources>
+</Application>
