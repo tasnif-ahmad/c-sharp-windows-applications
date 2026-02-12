@@ -11,7 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
       <Resource Include="Assets\bot_flag_icon.ico" />
-      <Resource Include="Assets\SarahBotEquilizer.gif" />
+      <Resource Include="Assets\SofiaBotEquilizer.gif" />
+      <Resource Include="Assets\SofiaBotEquilizer.mp4" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Speech" Version="10.0.2" />

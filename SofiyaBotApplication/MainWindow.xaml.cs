@@ -24,11 +24,28 @@ namespace SofiyaBotApplication
         public MainWindow()
         {
             InitializeComponent();
+
+            var videoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "SofiaBotEquilizer.mp4"); 
+            Logger.Info($"Video Path: {videoPath}");
+            BotVideo.Source = new Uri(
+            Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory,
+            "Assets",
+            "SofiaBotEquilizer.mp4"));
+
+            BotVideo.Play();
+
             Loaded += MainWindow_Loaded;
             tmrSpeaking = new DispatcherTimer();
             tmrSpeaking.Interval = TimeSpan.FromSeconds(1);
             tmrSpeaking.Tick += TmrSpeaking_Tick;
             tmrSpeaking.Start();
+        }
+
+        private void BotVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BotVideo.Position = TimeSpan.Zero;
+            BotVideo.Play();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

@@ -24,10 +24,14 @@
                     CornerRadius="6"
                     Margin="5">
 
-                <Image Source="/Assets/SarahBotEquilizer.gif"
-                       Stretch="Uniform"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                <MediaElement x:Name="BotVideo"
+                              LoadedBehavior="Manual"
+                              UnloadedBehavior="Manual"
+                              IsMuted="True"
+                              Stretch="Uniform"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              MediaEnded="BotVideo_MediaEnded"/>
 
             </Border>
 

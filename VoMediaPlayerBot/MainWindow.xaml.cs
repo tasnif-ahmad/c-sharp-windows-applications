@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Windows;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
@@ -25,16 +24,16 @@ namespace VoMediaPlayerBot
 
             Choices commands = new Choices();
             commands.Add(new string[]
-{
-               "Open",
-               "Play",
-               "Pause",
-               "Volume up",
-               "Volume down",
-               "Mute",
-               "Max volume",
-               "Exit"
-});
+            {
+                "Open",
+                "Play",
+                "Pause",
+                "Volume up",
+                "Volume down",
+                "Mute",
+                "Max volume",
+                "Exit"
+            });
 
 
             GrammarBuilder gb = new GrammarBuilder();
