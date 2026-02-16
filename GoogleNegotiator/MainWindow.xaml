@@ -1,0 +1,209 @@
+﻿<Window x:Class="GoogleNegotiator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoogleNegotiator"
+        mc:Ignorable="d"
+        Title="Google Negotiator"
+        Height="480"
+        Width="700"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F3F4">
+
+        <Window.Resources>
+
+                <!-- Rounded TextBox Style -->
+                <Style TargetType="TextBox">
+                        <Setter Property="FontSize"
+                                Value="15"/>
+                        <Setter Property="Padding"
+                                Value="12"/>
+                        <Setter Property="BorderBrush"
+                                Value="#DADCE0"/>
+                        <Setter Property="BorderThickness"
+                                Value="1"/>
+                        <Setter Property="Background"
+                                Value="White"/>
+                        <Setter Property="Margin"
+                                Value="0,0,0,15"/>
+                        <Setter Property="Template">
+                                <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                                <Border CornerRadius="10"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        Background="{TemplateBinding Background}">
+                                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                                </Border>
+                                        </ControlTemplate>
+                                </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                                <Trigger Property="IsKeyboardFocused"
+                                         Value="True">
+                                        <Setter Property="BorderBrush"
+                                                Value="#1A73E8"/>
+                                        <Setter Property="BorderThickness"
+                                                Value="2"/>
+                                </Trigger>
+                        </Style.Triggers>
+                </Style>
+
+                <!-- Modern Button Style -->
+                <Style TargetType="Button">
+                        <Setter Property="Foreground"
+                                Value="White"/>
+                        <Setter Property="FontWeight"
+                                Value="SemiBold"/>
+                        <Setter Property="Height"
+                                Value="42"/>
+                        <Setter Property="Width"
+                                Value="120"/>
+                        <Setter Property="Margin"
+                                Value="5"/>
+                        <Setter Property="BorderThickness"
+                                Value="0"/>
+                        <Setter Property="Cursor"
+                                Value="Hand"/>
+                        <Setter Property="Template">
+                                <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                                <Border x:Name="btnBorder"
+                                                        CornerRadius="10"
+                                                        Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver"
+                                                                 Value="True">
+                                                                <Setter TargetName="btnBorder"
+                                                                        Property="Opacity"
+                                                                        Value="0.85"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed"
+                                                                 Value="True">
+                                                                <Setter TargetName="btnBorder"
+                                                                        Property="Opacity"
+                                                                        Value="0.7"/>
+                                                        </Trigger>
+                                                </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                </Setter.Value>
+                        </Setter>
+                </Style>
+
+        </Window.Resources>
+
+        <Grid>
+
+                <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0"
+                                             EndPoint="0,1">
+                                <GradientStop Color="#E8F0FE"
+                                              Offset="0"/>
+                                <GradientStop Color="#F1F3F4"
+                                              Offset="1"/>
+                        </LinearGradientBrush>
+                </Grid.Background>
+
+                <Border Width="620"
+                        Padding="35"
+                        CornerRadius="20"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                        <Border.Effect>
+                                <DropShadowEffect BlurRadius="25"
+                                                  ShadowDepth="0"
+                                                  Opacity="0.15"/>
+                        </Border.Effect>
+
+                        <!-- SINGLE child of Border -->
+                        <Grid>
+
+                                <!-- DEFINE ROWS (THIS IS CRITICAL) -->
+                                <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Title -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Subtitle -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Search row -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Result box -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Buttons -->
+                                </Grid.RowDefinitions>
+
+                                <!-- Title -->
+                                <TextBlock Grid.Row="0"
+                                           Text="Google Negotiator"
+                                           FontSize="34"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,5"
+                                           Foreground="#202124"/>
+
+                                <!-- Subtitle -->
+                                <TextBlock Grid.Row="1"
+                                           Text="Smart Local Reply Assistant"
+                                           FontSize="14"
+                                           Foreground="#5F6368"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,25"/>
+
+                                <!-- Search bar + Search button -->
+                                <StackPanel Grid.Row="2"
+                                            Orientation="Horizontal"
+                                            Margin="0,0,0,15">
+
+                                        <TextBox x:Name="txtUser"
+                                                 Height="45"
+                                                 Width="420"
+                                                 Margin="0,0,10,0"/>
+
+                                        <Button x:Name="btnSearch"
+                                                Content="Search"
+                                                Background="#1A73E8"
+                                                Height="45"
+                                                Width="110"
+                                                Click="btnSearch_Click"/>
+                                </StackPanel>
+
+                                <!-- Result box -->
+                                <TextBox Grid.Row="3"
+                                         x:Name="txtGoogle"
+                                         Height="110"
+                                         Background="#F8F9FA"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"
+                                         Margin="0,0,0,10"
+                                         VerticalScrollBarVisibility="Auto"/>
+
+                                <!-- Bottom buttons (SEPARATE ROW) -->
+                                <StackPanel Grid.Row="4"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
+
+                                        <Button x:Name="btnMore"
+                                                Content="More"
+                                                Background="#34A853"
+                                                Click="btnMore_Click"/>
+
+                                        <Button x:Name="btnAdd"
+                                                Content="Add"
+                                                Background="#FBBC05"
+                                                Click="btnAdd_Click"/>
+                                </StackPanel>
+
+                        </Grid>
+
+                </Border>
+
+        </Grid>
+
+</Window>
+
